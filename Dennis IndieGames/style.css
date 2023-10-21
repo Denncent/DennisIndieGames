@@ -1,0 +1,491 @@
+/*--- Importerad fontawesome font som jag använder för min hemsida --*/
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+/*--- Fixerad bakgrundsbild --*/
+
+/*--- Extra Bootstrap kolumn padding --*/
+[class*="col-"] {
+  padding: 1rem;
+}
+
+/*--- Bootstrap fixar mobil gutter  --*/
+.row, .container-fluid {
+margin-left: 0px!important;
+margin-right: 0px!important;
+}
+
+/*--- Fix för Navbar hoppar på scroll --*/
+.fixed-top  {
+ backface-visibility: hidden;
+}
+
+/*--- Fixerad bild för hem sektion --*/
+.fixerad {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  z-index: -1;
+}
+.home-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-inner {
+  position: fixed;
+  display: table;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/*--- Fixerad bild för resterande hemsida börjar här --*/
+/*--- Motivering till varför jag använder fixed här är för att det är just det som är tänkt med designen,
+att bakgrunds bilden ska stanna kvar medans man skrollar upp och ner och att den inte är statisk kvar på samma plats. --*/
+.fixed-background {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.fixed-background h3 {
+  margin-bottom: 2rem;
+  }
+
+.fixed-background p {
+  margin-top: 1.5rem;
+  }
+
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999!important;
+}
+
+.fixed {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transform: translateZ(0);
+  will-change: transform;
+  background-image: url(img/videogame.png);
+  z-index: -1;
+}
+
+.light {
+  background-color: rgba(0, 0, 0, 0.75);
+  color:white;
+  padding: 7rem 2rem;
+}
+
+/*--- Fixerad bild för resterande hemsida slutar här --*/
+
+/*-- Tillbaka till topp knapp börjar här --*/
+/*-- Motivering till varför jag använder fixed här är för att knappen ska stanna kvar på samma ställe
+så som bakgrundsbilden gör, för att vara åtkomlig för alla tillfällen --*/
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(30, 137, 100, 0.4);
+  color: #1EB0AB;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #1EB0AB;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  z-index: 1;
+}
+
+#back-to-top-btn:hover, #back-to-top-btn.active {
+  background-color: #157B77;
+  color: #fff;  
+}
+
+.btnEntrance {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: btnEntrance;
+}
+
+@keyframes btnEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btnExit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;  
+  animation-name: btnExit;
+}
+
+@keyframes btnExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+/*-- Tillbaka till topp knapp slutar här --*/
+
+/*--- Body CSS börjar här --*/
+
+body {
+  overflow-x: hidden;
+  font-family: 'Fjalla One', sans-serif;
+  color: black;
+}
+
+.offset:before {
+  display: block;
+  content: "";
+  height: 4rem;
+  margin-top: -4rem;
+}
+
+h3.heading{
+  font-size: 1.2rem;
+}
+
+/*--- Meny CSS börjar här--*/
+.navbar {
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 600;
+  background: rgba( 0, 0, 0, 0.6) !important;
+}
+.navbar-nav li {
+  padding-right: .7rem;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  padding-top: .8rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:active,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #1EB0AB;
+}
+
+/*--- Meny CSS slutar här--*/
+
+/*-- Startar Hem sida CSS här --*/
+
+.home-inner {
+  background-image: url(img/videogame.png);
+}
+
+/*-- Använder absolute för position här för att texten ska stanna kvar på bilden och inte börja under bilden --*/
+.caption {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 38%;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.caption h1{
+  color: white;
+  font-size: 2.3rem;
+  letter-spacing: .2rem;
+  padding-bottom: 1rem;
+}
+
+.caption h3 {
+  color: white;
+  font-size: 1.2rem;
+  padding-bottom: .6rem;
+}
+
+.btn-lg {
+  padding: .5rem 1rem;
+  font-size: 1rem;
+}
+
+.btn-lg.active,
+.btn-lg:hover {
+  color: #1EB0AB;
+}
+
+/*-- Hem sida CSS slutar här --*/
+
+/*-- Animerar bilder börjar här --*/
+.anim {
+  position: relative;
+  transition: all 1000ms ease-out;
+}
+
+.anim-left {
+  left: -20vw;
+  opacity: 0;
+}
+
+.activated .anim-left {
+  left: 0;
+  opacity: 1;
+}
+
+.anim-top {
+  top: -20vw;
+  opacity: 0;
+}
+
+.activated .anim-top {
+  top: 0;
+  opacity: 1;
+}
+
+.anim-bottom {
+  bottom: -20vw;
+  opacity: 0;
+}
+
+.activated .anim-bottom {
+  bottom: 0;
+  opacity: 1;
+}
+
+.anim-right {
+  right: -20vw;
+  opacity: 0;
+}
+
+.activated .anim-right {
+  right: 0;
+  opacity: 1;
+}
+
+.anim-flip {
+  opacity: 0;
+  transform: rotateY(360deg);
+}
+
+.activated .anim-flip {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+/*-- Animerar bilder slutar här--*/
+
+/*-- Galleri CSS börjar här */
+
+.narrow {
+  width: 75%;
+  margin: 1.5rem auto;
+  padding-top: 2rem;
+}
+
+.btn-secondary {
+  border-radius: 0;
+  text-transform: uppercase;
+  padding: .2rem .5rem;
+  font-size: 1rem;
+  margin: 1rem;
+  color: white;
+  background-color: #1EB0AB;
+  width: 10rem;
+  margin: auto;
+}
+
+.btn-secondary.active,
+.btn-secondary:hover {
+  color: white;
+  background-color: #157B77;
+}
+
+.projekt img{
+  padding: 1rem;
+}
+
+/*-- Symboler CSS börjar här */
+
+.narrow {
+  margin-bottom: 0;
+  padding: 2rem 0 3.5rem;
+  border-radius: 0;
+}
+
+.tjanst i {
+  padding-bottom: 1.5rem;
+  padding-top: 2rem;
+  color: #1EB0AB;
+}
+
+.lankar i {
+  color: #1EB0AB;
+  padding: .5rem;
+}
+
+.lankar i.active,
+.lankar i:hover {
+  color: #157B77;
+}
+
+h3.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.heading-underline {
+  width: 8rem;
+  height: .2rem;
+  background-color: #1EB0AB;
+  margin: 0 auto 2rem;
+}
+
+.tjanst h3{
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding-bottom: .5rem;
+}
+
+.tjanst p {
+font-size: 1rem;
+}
+
+
+/*-- Om Oss CSS --*/
+
+.person img{
+  max-width: 50%;
+  border-radius: 50%
+}
+
+.person img {
+  display: block;
+  margin: 0 auto;
+}
+
+.person-hr {
+  border-top: .15rem solid #1EB0AB;
+}
+
+/*-- Footer CSS börjar här */
+
+.row>* {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+footer {
+  background-color: #25292d;
+  color: white;
+  padding: 2rem 0 2rem;
+}
+
+.linje {
+  width: 100%;
+  border-top: .2rem solid #40474e;
+  margin-top: 3rem;
+}
+
+/*-- Footer CSS slutar här */
+
+/*-- Hemsida anpassning för Dator skärmar som börjar på mindre laptop skärm,
+där många text storlekar/knappar blir större --*/
+
+@media (min-width: 768px) {
+  
+  .caption h1{
+    color: white;
+    font-size: 4.8rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    text-shadow: .1rem .1rem .8rem black;
+    padding-bottom: 1rem;
+  }
+  
+  .caption h3 {
+    color: white;
+    font-size: 2.0rem;
+    text-shadow: .1rem .1rem .5rem black;
+    font-weight: 600;
+    padding-bottom: 1.6rem;
+  }
+  
+  .btn-lg {
+    border-width: medium;
+    border-radius: 0;
+    padding: .6rem 1.3rem;
+    font-size: 1.5rem;
+  }
+
+.person img{
+  max-width: 100%;
+  border-radius: 50%
+}
+
+.btn-secondary {
+  font-size: 1.2rem;
+  padding: .6rem 1.2rem;
+}
+
+#back-to-top-btn {
+    font-size: 3rem;
+    width: 6rem;
+    height: 6rem;
+  }
+
+h3.heading{
+  font-size: 3rem;
+}
+
+h3.lead{
+  font-size: 1.5rem;
+}
+
+.tjanst h3 {
+  font-size: 2rem;
+}
+
+.tjanst p {
+  font-size: 1.2rem;
+}
+
+.projekt h4 {
+  font-size: 2rem;
+}
+
+.projekt p {
+  font-size: 1.2rem;
+}
+
+.person blockquote {
+  font-size: 1.2rem;
+}
+}
+/*--- Body CSS slutar här --*/
+
+/*-- Hemsida anpassning för Dator skärmar slutar här --*/
